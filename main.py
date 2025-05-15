@@ -59,7 +59,7 @@ if __name__ == '__main__':
         plt.ylabel("Fitness")
         plt.yscale("log")
         plt.grid()
-        plt.savefig(f"convergencia_{TEST_FUNCTION}_{dim}D.png")
+        plt.savefig(f"graps/convergencia_{TEST_FUNCTION}_{dim}D.png")
         plt.show()
 
         print("\nOptimization Results:")
