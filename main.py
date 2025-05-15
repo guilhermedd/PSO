@@ -21,21 +21,21 @@ def ackley(solution: np.ndarray) -> float:
 
 if __name__ == '__main__':
     # Configurações otimizadas para Ackley
-    TEST_FUNCTION = "griewank"
+    TEST_FUNCTION = "ackley"
     DIMENSIONS = 10
-    NUM_PARTICLES = 500  # Enxame maior
+    NUM_PARTICLES = 1000  # Enxame maior
     
     if TEST_FUNCTION == "ackley":
         BOUNDS = (-32.768, 32.768)
         OBJECTIVE_FUNCTION = ackley
-        C1 = 1.5
-        C2 = 1.5
+        C1 = 2.05
+        C2 = 2.05
         VMAX_RATIO = 0.1  
     else:
         BOUNDS = (-600, 600)
         OBJECTIVE_FUNCTION = griewank
-        C1 = 1.5
-        C2 = 1.5
+        C1 = 2.05
+        C2 = 2.05
         VMAX_RATIO = 0.1  
     
     pso = PSOEnvironment(
@@ -47,6 +47,8 @@ if __name__ == '__main__':
         c2=C2,
         vmax_ratio=VMAX_RATIO
     )
+
+    assert C1 + C2 > 4, "c1 + c2 deve ser maior que 4"
     
     result = pso.optimize(
         tolerance=1e-10,  # Tolerância mais rigorosa
