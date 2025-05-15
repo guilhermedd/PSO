@@ -53,7 +53,7 @@ class PSOEnvironment:
 
     def optimize(
         self,
-        tolerance: float = 1e-6,
+        tolerance: float = 1e-10,
         verbose: bool = True
     ) -> PSOResult:
         """
