@@ -97,7 +97,7 @@ class PSOEnvironment:
             
             # Log de progresso
             if verbose and (iterations % 100 == 0 or iterations == 1):
-                print(f"Iteration {iterations:5d} - Best Fitness: {self.global_best_fitness:.6f}")
+                print(f"Iteration {iterations:5d} - Best Fitness: {self.global_best_fitness:.10f}")
         
         return PSOResult(
             best_fitness=self.global_best_fitness,

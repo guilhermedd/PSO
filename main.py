@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 def griewank(solution: np.ndarray) -> float:
     dim = len(solution)
     sum_part = np.sum(solution**2) / 4000
-    product_part = np.prod(np.cos(solution / np.sqrt(np.arange(1, dim + 1))))
+    angles = (solution / np.sqrt(np.arange(1, dim + 1))) * np.pi / 180
+    product_part = np.prod(np.cos(angles))
     return sum_part - product_part + 1
 
 def ackley(solution: np.ndarray) -> float:
@@ -47,7 +48,7 @@ if __name__ == '__main__':
 
                 assert pso.c1 + pso.c2 > 4, "c1 + c2 deve ser maior que 4"
 
-                result = pso.optimize(tolerance=1e-10, verbose=True)
+                result = pso.optimize()
                 fits.append(result.fitness_history)
                 max_len = max(max_len, len(result.fitness_history))
 
@@ -62,7 +63,6 @@ if __name__ == '__main__':
             plt.yscale("log")
             plt.grid()
             plt.savefig(f"graphs/convergencia_{test_function}_{dim}D.png")
-            plt.show()
 
             print("\nOptimization Results:")
             print(f"Best fitness: {result.best_fitness}")
