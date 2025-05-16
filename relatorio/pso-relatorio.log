@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.10)  15 MAY 2025 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.10)  16 MAY 2025 08:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,34 +344,26 @@ Type  H <return>  for immediate help.
 l.88 ...=.9\textwidth]{convergencia_ackley_5D.png}
                                                   
 ? 
-
-LaTeX Warning: File `convergencia_ackley_10D.png' not found on input line 95.
-
-
-! Package pdftex.def Error: File `convergencia_ackley_10D.png' not found: using
- draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.95 ....9\textwidth]{convergencia_ackley_10D.png}
-                                                  
-? 
+<../graphs/convergencia_ackley_10D.png, id=20, 462.528pt x 346.896pt>
+File: ../graphs/convergencia_ackley_10D.png Graphic file (type png)
+<use ../graphs/convergencia_ackley_10D.png>
+Package pdftex.def Info: ../graphs/convergencia_ackley_10D.png  used on input l
+ine 95.
+(pdftex.def)             Requested size: 384.1096pt x 288.09827pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [3]
-Underfull \hbox (badness 1028) in paragraph at lines 105--106
+Underfull \hbox (badness 1028) in paragraph at lines 128--129
 \OT1/ptm/m/n/12 A an[]alise dos re-sul-ta-dos evi-den-cia que o PSO apre-senta 
 de-sem-pe-nho ro-busto na
  []
 
 
 
-[4]
+[4 <../graphs/convergencia_ackley_10D.png>]
 No file pso-relatorio.bbl.
 
 
@@ -389,13 +381,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5921 strings out of 473190
- 102910 string characters out of 5715800
+ 5904 strings out of 473190
+ 102217 string characters out of 5715800
  512515 words of memory out of 5000000
- 29102 multiletter control sequences out of 15000+600000
+ 29085 multiletter control sequences out of 15000+600000
  577059 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,79p,699b,415s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,79p,699b,415s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
 /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
@@ -407,10 +399,10 @@ live/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
 ist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on pso-relatorio.pdf (5 pages, 132795 bytes).
+Output written on pso-relatorio.pdf (5 pages, 156227 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

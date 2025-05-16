@@ -56,10 +56,12 @@ if __name__ == '__main__':
             fits_padded = [np.pad(f, (0, max_len - len(f)), constant_values=np.nan) for f in fits]
             mean_fit = np.nanmean(fits_padded, axis=0)
             std_deviation = np.nanstd(fits_padded, axis=0)
+
+            with open(f"results/{test_function}_{dim}D.txt", "w") as f:
+                f.write(f"Desvio padrão: {np.std(mean_fit)}\n")
+                f.write(f"Fit médio: {np.mean(mean_fit)}\n")
             
-            """"
             # Gráfico de convergência
-            """
             plt.plot(mean_fit)
             plt.title(f"Convergência do PSO - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
             plt.xlabel("Iterações")

@@ -92,12 +92,35 @@ Para cada dimensão, foi gerado um gráfico de convergência mostrando a média 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{convergencia_ackley_10D.png}
+  \includegraphics[width=.9\textwidth]{../graphs/convergencia_ackley_10D.png}
   \caption{Convergência do PSO para Ackley (10 dimensões)}
   \label{fig:convergencia10d}
 \end{figure}
 
 Os resultados mostram que o PSO foi capaz de encontrar soluções próximas do ótimo global em ambas as dimensões, com convergência mais rápida para 5 dimensões.
+
+
+Além disso, é possível verificar a seguinte tabela com média e desvio padrão de 30 execuções do experimento, apontados pelos consecutivos boxplots.
+
+A tabela confirma o que os gráficos mostraram, de maneira que mostra o exponencial como o melhor resultado para o menor arquivo, enquanto o linear foi o melhor resultado para o maior arquivo.
+
+\begin{table}[H]
+\centering
+\caption{Média e Desvio Padrão dos Resultados Obtidos}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Função} & \textbf{Dimensões} & \textbf{Média} & \textbf{Desvio Padrão} \\ \hline
+Ackley     & 5      & 0.9792      & 0.1418 \\ \hline
+Ackley     & 10     & 0.7228      & 0.1087 \\ \hline
+Griewank   & 5      & 2.5463    & 0.1992 \\ \hline
+Griewank   & 10     & 3.7791    & 0.1608 \\ \hline
+
+
+\end{tabular}
+\label{tab:resultados}
+\end{table}
+
+
 
 \section{Análise dos resultados obtidos.}
 \label{sec:analise_dos_resultados_obtidos}
