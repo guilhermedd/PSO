@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.10)  15 MAY 2025 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.10)  15 MAY 2025 21:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -165,7 +165,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box55
 )
-(./pso-relatorio.aux)
+No file pso-relatorio.aux.
 \openout1 = `pso-relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -182,7 +182,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -292,237 +291,126 @@ File: omspcr.fd
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
 
-! Undefined control sequence.
-l.49 ...�ão de custo \( c: V \times V \to \mathbb
-                                                  {R}^+ \), o objetivo é en...
-
-? 
-
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
-1.
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-! Undefined control sequence.
-<recently read> \text 
-                      
-l.71 ...rbação aleatória no estado atual $\text
-                                                  {estado}_0$, gerando um no...
-
-? 
-! Undefined control sequence.
-<recently read> \text 
-                      
-l.71 ... $\text{estado}_0$, gerando um novo $\text
-                                                  {estado}_i$
-? 
-! Undefined control sequence.
-l.72 ... variação de energia $\Delta E = E(\text
-                                                  {estado}_i) - E(\text{esta...
-
-? 
-! Undefined control sequence.
-l.72 ...a $\Delta E = E(\text{estado}_i) - E(\text
-                                                  {estado}_0)$
-? 
-! Undefined control sequence.
-<recently read> \text 
-                      
-l.73 ...na energia), aceitar a transição ($\text
-                                                  {estado}_i \rightarrow \te...
-
-? 
-! Undefined control sequence.
-l.73 ...ição ($\text{estado}_i \rightarrow \text
-                                                  {estado}_0$)
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.74 ...aceitar a transição com probabilidade P_
-                                                  {\text{accept}}($T_i$)
-? 
-! Undefined control sequence.
-l.74 ...r a transição com probabilidade P_{\text
-                                                  {accept}}($T_i$)
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.74 ...�o com probabilidade P_{\text{accept}}($T_
-                                                  i$)
-? 
-! Undefined control sequence.
-<recently read> \text 
-                      
-l.80     \item Retornar o $\text
-                                {estado}_0$ como solução
-? 
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84   \caption
-               {Passo a passo do método de \textbf{Simulated Annealing}}
-? 
-! Undefined control sequence.
-l.106         \item Calcular $\delta E = E_{\text
-                                                 {nova}} - E_{\text{atual}}$
-? 
-! Undefined control sequence.
-l.106 ...ar $\delta E = E_{\text{nova}} - E_{\text
-                                                  {atual}}$
-? 
-! Undefined control sequence.
-l.110             P_{\text
-                          {accept}} = \exp\left(-\frac{\Delta E}{T_i}\right)
-? 
+LaTeX Warning: File `imgs/pso_diagram.png' not found on input line 67.
 
 
-[2]
-
-LaTeX Warning: File `imgs/final_diagram.png' not found on input line 128.
-
-
-! Package pdftex.def Error: File `imgs/final_diagram.png' not found: using draf
-t setting.
+! Package pdftex.def Error: File `imgs/pso_diagram.png' not found: using draft 
+setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.128 ...idth=1\textwidth]{imgs/final_diagram.png}
+l.67 ...s[width=1\textwidth]{imgs/pso_diagram.png}
                                                   
 ? 
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
-29.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 6
+8.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 
-[3]
+[2]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+7.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
 
-LaTeX Warning: File `imgs/convergence_51.png' not found on input line 153.
+LaTeX Warning: Reference `fig:convergencia5d' on page 3 undefined on input line
+ 84.
 
 
-! Package pdftex.def Error: File `imgs/convergence_51.png' not found: using dra
-ft setting.
+LaTeX Warning: Reference `fig:convergencia10d' on page 3 undefined on input lin
+e 84.
+
+
+LaTeX Warning: File `convergencia_ackley_5D.png' not found on input line 88.
+
+
+! Package pdftex.def Error: File `convergencia_ackley_5D.png' not found: using 
+draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 ...th=.9\textwidth]{imgs/convergence_51.png}
+l.88 ...=.9\textwidth]{convergencia_ackley_5D.png}
                                                   
 ? 
 
-LaTeX Warning: File `imgs/convergence_100.png' not found on input line 160.
+LaTeX Warning: File `convergencia_ackley_10D.png' not found on input line 95.
 
 
-! Package pdftex.def Error: File `imgs/convergence_100.png' not found: using dr
-aft setting.
+! Package pdftex.def Error: File `convergencia_ackley_10D.png' not found: using
+ draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.160 ...h=.9\textwidth]{imgs/convergence_100.png}
+l.95 ....9\textwidth]{convergencia_ackley_10D.png}
                                                   
 ? 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[3]
+Underfull \hbox (badness 1028) in paragraph at lines 105--106
+\OT1/ptm/m/n/12 A an[]alise dos re-sul-ta-dos evi-den-cia que o PSO apre-senta 
+de-sem-pe-nho ro-busto na
+ []
 
 
 
 [4]
-
-LaTeX Warning: File `imgs/boxplot_51.png' not found on input line 172.
-
-
-! Package pdftex.def Error: File `imgs/boxplot_51.png' not found: using draft s
-etting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.172 ...[width=.9\textwidth]{imgs/boxplot_51.png}
-                                                  
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[5]
-
-LaTeX Warning: File `imgs/boxplot_100 copy.png' not found on input line 179.
-
-
-! Package pdftex.def Error: File `imgs/boxplot_100 copy.png' not found: using d
-raft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.179 ...=.9\textwidth]{imgs/boxplot_100 copy.png}
-                                                  
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[6]
-
-[7]
-
-[8]
 No file pso-relatorio.bbl.
 
 
-[9] (./pso-relatorio.aux)
+[5] (./pso-relatorio.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5996 strings out of 473190
- 104979 string characters out of 5715800
- 515379 words of memory out of 5000000
- 29175 multiletter control sequences out of 15000+600000
+ 5921 strings out of 473190
+ 102910 string characters out of 5715800
+ 512515 words of memory out of 5000000
+ 29102 multiletter control sequences out of 15000+600000
  577059 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,79p,830b,415s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on pso-relatorio.pdf (9 pages, 178260 bytes).
+ 72i,10n,79p,699b,415s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
+25/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on pso-relatorio.pdf (5 pages, 132795 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
