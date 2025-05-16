@@ -1,0 +1,9 @@
+\begin{thebibliography}{}
+
+\bibitem[Kennedy and Eberhart 1995]{kennedy1995particle}
+Kennedy, J. and Eberhart, R. (1995).
+\newblock Particle swarm optimization.
+\newblock In {\em Proceedings of ICNN'95-international conference on neural
+  networks}, volume~4, pages 1942--1948. ieee.
+
+\end{thebibliography}
