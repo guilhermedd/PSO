@@ -55,7 +55,11 @@ if __name__ == '__main__':
             # Preenchimento com NaN para alinhamento
             fits_padded = [np.pad(f, (0, max_len - len(f)), constant_values=np.nan) for f in fits]
             mean_fit = np.nanmean(fits_padded, axis=0)
+            std_deviation = np.nanstd(fits_padded, axis=0)
             
+            """"
+            # Gráfico de convergência
+            """
             plt.plot(mean_fit)
             plt.title(f"Convergência do PSO - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
             plt.xlabel("Iterações")
@@ -64,6 +68,20 @@ if __name__ == '__main__':
             plt.grid()
             plt.savefig(f"graphs/convergencia_{test_function}_{dim}D.png")
             plt.close()
+
+            """
+            # Boxplot
+            """
+            final_fitness = [f[-1] for f in fits]
+            plt.boxplot(final_fitness)
+            plt.title(f"Boxplot de Fitness Final - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
+            plt.ylabel("Fitness final")
+            plt.grid()
+            plt.yscale("log")
+            plt.savefig(f"graphs/boxplot_{test_function}_{dim}D.png")
+            plt.close()
+
+
 
             print("\nOptimization Results:")
             print(f"Best fitness: {result.best_fitness}")

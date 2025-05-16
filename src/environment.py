@@ -83,10 +83,7 @@ class PSOEnvironment:
                 if fitness < self.global_best_fitness:
                     self.global_best_fitness = fitness
                     self.global_best_position = np.copy(position)
-                    best_iteration = iterations
-            
-            # Atualiza velocidades e posições
-            for particle in self.particles:
+
                 particle.update_velocity(self.global_best_position)
                 particle.update_position()
             
