@@ -14,8 +14,6 @@ class Particle:
         self.best_position = np.copy(self.position)
         self.best_fitness = float('inf')
 
-        self.w = 0.729 
-
     def evaluate(self, objective_function):
         fitness = objective_function(self.position)
         if fitness < self.best_fitness:
@@ -23,13 +21,14 @@ class Particle:
             self.best_position = np.copy(self.position)
         return fitness, self.position
 
-    def update_velocity(self, global_best_position):
+    def update_velocity(self, best_position, w=1.0):
+        # best_position pode ser o global_best (PSO/PSOw) ou o melhor vizinho (PSOk)
         r1 = np.random.rand(self.dimensions)
         r2 = np.random.rand(self.dimensions)
 
         cognitive = self.c1 * r1 * (self.best_position - self.position)
-        social = self.c2 * r2 * (global_best_position - self.position)
-        inertia = self.w * self.velocity
+        social = self.c2 * r2 * (best_position - self.position)
+        inertia = w * self.velocity
 
         self.velocity = inertia + cognitive + social
         self.velocity = np.clip(self.velocity, -self.vmax, self.vmax)

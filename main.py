@@ -1,6 +1,8 @@
 from src.environment import PSOEnvironment
 import numpy as np
 import matplotlib.pyplot as plt
+import multiprocessing
+
 
 def griewank(solution: np.ndarray) -> float:
     dim = len(solution)
@@ -8,6 +10,7 @@ def griewank(solution: np.ndarray) -> float:
     angles = (solution / np.sqrt(np.arange(1, dim + 1))) * np.pi / 180
     product_part = np.prod(np.cos(angles))
     return sum_part - product_part + 1
+
 
 def ackley(solution: np.ndarray) -> float:
     dim = len(solution)
@@ -18,75 +21,90 @@ def ackley(solution: np.ndarray) -> float:
     return term1 + term2 + 20 + np.e
 
 
+# Função para ser executada em paralelo
+def run_pso(dim, bounds, obj_fn, num_particles, variant, w=0.729, k=3):
+    pso = PSOEnvironment(
+        dimensions=dim,
+        bounds=bounds,
+        objective_function=obj_fn,
+        num_particles=num_particles,
+        c1=2.05,
+        c2=2.05,
+        vmax_ratio=0.1,
+        variant=variant,
+        w=w,
+        k=k
+    )
+    result = pso.optimize()
+    return result.fitness_history, result.best_fitness, result.best_position, result.iterations
+
 
 if __name__ == '__main__':
+    multiprocessing.set_start_method("spawn")  # mais seguro, especialmente no Windows/macOS
+
     TEST_FUNCTIONS = ["ackley", "griewank"]
     NUM_PARTICLES = 30
     DIMENSIONS = [5, 10]
+    VARIANTS = [
+        ("standard", {"w": 0.729, "k": 3}),
+        ("w", {"w": 0.729, "k": 3}),
+        ("k", {"w": 1.0, "k": 3}),
+    ]
 
     for test_function in TEST_FUNCTIONS:
         if test_function == "ackley":
             BOUNDS = (-32.768, 32.768)
+            OBJ_FN = ackley
         else:
             BOUNDS = (-600, 600)
-            
+            OBJ_FN = griewank
+
         for dim in DIMENSIONS:
-            fits = []
-            max_len = 0
+            for variant, params in VARIANTS:
+                print(f"Executando {test_function} com {dim} dimensões, variante {variant}...")
 
-            for i in range(10):
+                with multiprocessing.Pool(processes=10) as pool:
+                    results = pool.starmap(
+                        run_pso,
+                        [(dim, BOUNDS, OBJ_FN, NUM_PARTICLES, variant, params["w"], params["k"]) for _ in range(10)]
+                    )
 
-                pso = PSOEnvironment(
-                    dimensions=dim,
-                    bounds=BOUNDS,
-                    objective_function= ackley if test_function == "ackley" else griewank,
-                    num_particles=NUM_PARTICLES,
-                    c1=2.05,
-                    c2=2.05,
-                    vmax_ratio=0.1
-                )
+                fits = [r[0] for r in results]
+                best_fitnesses = [r[1] for r in results]
+                best_positions = [r[2] for r in results]
+                iterations_list = [r[3] for r in results]
 
-                assert pso.c1 + pso.c2 > 4, "c1 + c2 deve ser maior que 4"
+                max_len = max(len(fit) for fit in fits)
+                fits_padded = [np.pad(f, (0, max_len - len(f)), constant_values=np.nan) for f in fits]
+                mean_fit = np.nanmean(fits_padded, axis=0)
 
-                result = pso.optimize()
-                fits.append(result.fitness_history)
-                max_len = max(max_len, len(result.fitness_history))
+                # Resultados
+                with open(f"results/{test_function}_{dim}D_{variant}.txt", "w") as f:
+                    f.write(f"Desvio padrão: {np.std(mean_fit)}\n")
+                    f.write(f"Fit médio: {np.mean(mean_fit)}\n")
 
-            # Preenchimento com NaN para alinhamento
-            fits_padded = [np.pad(f, (0, max_len - len(f)), constant_values=np.nan) for f in fits]
-            mean_fit = np.nanmean(fits_padded, axis=0)
-            std_deviation = np.nanstd(fits_padded, axis=0)
+                # Gráfico de convergência
+                plt.plot(mean_fit)
+                plt.title(f"Convergência do PSO-{variant} - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
+                plt.xlabel("Iterações")
+                plt.ylabel("Fitness")
+                plt.yscale("log")
+                plt.grid()
+                plt.savefig(f"graphs/convergencia_{test_function}_{dim}D_{variant}.png")
+                plt.close()
 
-            with open(f"results/{test_function}_{dim}D.txt", "w") as f:
-                f.write(f"Desvio padrão: {np.std(mean_fit)}\n")
-                f.write(f"Fit médio: {np.mean(mean_fit)}\n")
-            
-            # Gráfico de convergência
-            plt.plot(mean_fit)
-            plt.title(f"Convergência do PSO - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
-            plt.xlabel("Iterações")
-            plt.ylabel("Fitness")
-            plt.yscale("log")
-            plt.grid()
-            plt.savefig(f"graphs/convergencia_{test_function}_{dim}D.png")
-            plt.close()
+                # Boxplot
+                final_fitness = [f[-1] for f in fits]
+                plt.boxplot(final_fitness)
+                plt.title(f"Boxplot de Fitness Final - {test_function} ({dim}D, {NUM_PARTICLES} partículas, {variant})")
+                plt.ylabel("Fitness final")
+                plt.grid()
+                plt.yscale("log")
+                plt.savefig(f"graphs/boxplot_{test_function}_{dim}D_{variant}.png")
+                plt.close()
 
-            """
-            # Boxplot
-            """
-            final_fitness = [f[-1] for f in fits]
-            plt.boxplot(final_fitness)
-            plt.title(f"Boxplot de Fitness Final - {test_function} ({dim}D, {NUM_PARTICLES} partículas)")
-            plt.ylabel("Fitness final")
-            plt.grid()
-            plt.yscale("log")
-            plt.savefig(f"graphs/boxplot_{test_function}_{dim}D.png")
-            plt.close()
-
-
-
-            print("\nOptimization Results:")
-            print(f"Best fitness: {result.best_fitness}")
-            print(f"Best position: {result.best_position}")
-            print(f"Iterations: {result.iterations}")
-            print(f"Final fitness: {result.fitness_history[-1]}")
+                print("\nOptimization Results:")
+                print(f"Best fitness: {min(best_fitnesses)}")
+                print(f"Best position: {best_positions[np.argmin(best_fitnesses)]}")
+                print(f"Iterations: {iterations_list[np.argmin(best_fitnesses)]}")
+                print(f"Final fitness: {final_fitness[np.argmin(best_fitnesses)]}")
